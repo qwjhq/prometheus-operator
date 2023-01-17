@@ -787,6 +787,8 @@ func makeStatefulSetSpec(p monitoringv1.Prometheus, c *operator.Config, shard in
 		boolFalse := false
 		boolTrue := true
 		container := v1.Container{
+			Env: []v1.EnvVar{{Name: "TZ",
+				Value: "Asia/Shanghai"}},
 			Name:                     "thanos-sidecar",
 			Image:                    thanosImage,
 			TerminationMessagePolicy: v1.TerminationMessageFallbackToLogsOnError,
@@ -936,6 +938,8 @@ func makeStatefulSetSpec(p monitoringv1.Prometheus, c *operator.Config, shard in
 	boolTrue := true
 	operatorContainers := append([]v1.Container{
 		{
+			Env: []v1.EnvVar{{Name: "TZ",
+				Value: "Asia/Shanghai"}},
 			Name:                     "prometheus",
 			Image:                    prometheusImagePath,
 			Ports:                    ports,

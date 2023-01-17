@@ -147,6 +147,10 @@ func CreateConfigReloader(name string, options ...ReloaderOption) v1.Container {
 					FieldRef: &v1.ObjectFieldSelector{FieldPath: "metadata.name"},
 				},
 			},
+			{
+				Name:  "TZ",
+				Value: "Asia/Shanghai",
+			},
 		}
 		ports []v1.ContainerPort
 	)
