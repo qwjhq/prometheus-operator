@@ -13,9 +13,9 @@ APP_DIR              := docker/app
 #####################################################
 # Support multiple build image
 #####################################################
-IMAGE_REGISTRY        := my.registry.cn
+IMAGE_REGISTRY        := cddharbor.mysql.dbdns.cmbchina.cn
 IMAGE_PROJECT         := dkcloudv3
-TAG                   ?= v0.57
+TAG                   ?= v0.57.1
 CODEGEN_VERSION      := v0.20.15
 GO_VERSION           := 1.17.13
 DOCKERFILE_AMD64      := ./Dockerfile.amd64

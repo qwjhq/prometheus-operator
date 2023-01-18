@@ -1,3 +1,13 @@
+# build Operator
+1. get vendor (add to project)
+docker pull library/golang:1.17.13
+docker run -it -v /root/prometheus-operator:/prometheus-operator library/golang:1.17.13  /bin/bash
+cd /prometheus-operator/
+go mod vendor
+
+2. build prometheus operator images
+  make build-all
+  
 # Prometheus Operator
 
 [![Build Status](https://github.com/prometheus-operator/prometheus-operator/workflows/ci/badge.svg)](https://github.com/prometheus-operator/prometheus-operator/actions)
